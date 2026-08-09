@@ -1,0 +1,39 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Pacchetti Matematici Fondamentali ---
+\usepackage{amsmath}   % Strutture matematiche avanzate (es. align)
+\usepackage{amssymb}   % Simboli matematici e font speciali (es. \mathbb pour i reali R)
+\usepackage{amsfonts}  % Font matematici aggiuntivi
+\usepackage{amsthm}    % Gestione di teoremi, definizioni e dimostrazioni
+
+% --- Configurazione dei Teoremi ---
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposizione}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definizione}
+\newtheorem{example}[theorem]{Esempio}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Nota}
+
+\begin{document}
+
+\begin{theorem}
+
+	Let $T$ be a consistent $L$-theory and let $\equiv_T$ be the equivalence relation on $Mod(T)$ given by elementary equivalence.
+	Suppose $\equiv_T$ has exactly $n$ classes for some $n < \omega$.
+	Let $M_i$ with $i = 1,..,n$ be representant of each class.
+	Then there exist $\psi_1,..,\psi_n$ $L$-sentences such that $\forall i = 1,..,n \ T \cup \{ \psi_i \} \vdash Th(M_i)$.
+  
+\end{theorem}
+
+\begin{proof}
+
+	Let $(\phi_{i,j})_{1 \leq i < j \leq n}$ be $L$-sentences such that $M_i \models \phi_{i,j}$ and $M_j \not \models \phi_{i,j}$.
+	Now consider $\psi_i := \bigwedge_{k < i} \neg \phi_{k,i} \land \bigwedge_{k >i} \phi_{i,k}$.
+	Then $T \cup \{\psi_i\} \vdash Th(M_i)$.
+
+\end{proof}
+
+\end{document}
+
