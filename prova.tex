@@ -1,0 +1,39 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Pacchetti Matematici Fondamentali ---
+\usepackage{amsmath}   % Strutture matematiche avanzate (es. align)
+\usepackage{amssymb}   % Simboli matematici e font speciali (es. \mathbb pour i reali R)
+\usepackage{amsfonts}  % Font matematici aggiuntivi
+\usepackage{amsthm}    % Gestione di teoremi, definizioni e dimostrazioni
+
+% --- Configurazione dei Teoremi ---
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposizione}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definizione}
+\newtheorem{example}[theorem]{Esempio}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Nota}
+
+\begin{document}
+
+\begin{theorem}
+
+	Let $p,M,c$ such that $\Delta-tp(c) = \{ \phi \in \Delta : p \vdash \phi\}$. Then $p$ prime.
+ 
+\end{theorem}
+
+\begin{proof}
+
+	By contradiction, assume there exist $\phi_1,..,\phi_n \in P(\Delta)$ such that $p \vdash \bigvee_{i=1,..,n} \phi_i$ 
+	but for all $i=1,..,n$ we have $p \not \vdash \phi_i$. Since $c \models p$ we must have $c \models \phi_i$ for some $i = 1,..,n$.
+	Put $\phi_i$ in $DNF$ to obtain $c \models \bigvee_{k=1,..,m} \bigwedge_{j=1,..,n_k} \psi_j^k$ where $\psi_j^k \in \Delta$ for all $j,k$.
+	Let $k$ such that $c \models \bigwedge_{j=1,..,n_k} \psi_j^k$.
+	Then for all $j = 1,..,n_k$ we have $c \models \psi_j^k$. 
+	Then for all $j=1,..,n_k$ we have $p \vdash \psi_j^k$ and consequently $p \vdash \phi_i$, contradiction.
+
+\end{proof}
+
+\end{document}
+
