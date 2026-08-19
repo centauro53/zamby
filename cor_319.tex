@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Pacchetti Matematici Fondamentali ---
+\usepackage{amsmath}   % Strutture matematiche avanzate (es. align)
+\usepackage{amssymb}   % Simboli matematici e font speciali (es. \mathbb pour i reali R)
+\usepackage{amsfonts}  % Font matematici aggiuntivi
+\usepackage{amsthm}    % Gestione di teoremi, definizioni e dimostrazioni
+
+% --- Configurazione dei Teoremi ---
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposizione}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definizione}
+\newtheorem{example}[theorem]{Esempio}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Nota}
+
+\begin{document}
+
+\begin{theorem}
+
+	TFAE:
+	\begin{enumerate}
+		\item	$p$ prime
+		\item	for all $\phi_1,..,\phi_n \in \Delta$ $p \vdash \bigvee_{i=1,..,n} \phi_i \Rightarrow p \vdash \phi_i$ for some $i = 1,..,n$. 
+	\end{enumerate}
+ 
+\end{theorem}
+
+\begin{proof}
+
+	\begin{itemize}
+		\item $1 \Rightarrow 2$: OK!
+		\item $2 \Rightarrow 1$: It's enough showing that $p \cup \{\neg \phi: \phi \in \Delta, p \not \vdash \phi\}$ consistent.
+			By contradiction it's inconsistent. Then let $\phi_1,..,\phi_n \in \Delta$ such that 
+			$p \cup \{\neg \phi_1,..,\neg \phi_n\}$ inconsistent and $p \vdash \neg \phi_i$ for all $i = 1,..,n$.
+			Then $p \vdash \neg \bigwedge_{i = 1,..,n} \neg \phi_i$.
+			Then $p \vdash \bigvee \phi_i$. This implies $p \vdash \phi_i$ for some $i=1,..,n$., a contradiction.
+
+	\end{itemize}
+
+\end{proof}
+
+\end{document}
+
